@@ -61,6 +61,24 @@
         color: #b5c7eb;
         font-size: 14px;
       }
+      .nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+      .nav a {
+        color: #8eb4ff;
+        text-decoration: none;
+        border: 1px solid #2f4a76;
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+      .nav a.active {
+        border-color: #5d8ff7;
+        color: #dce8ff;
+      }
       a.inline {
         color: #8eb4ff;
       }
@@ -68,6 +86,11 @@
   </head>
   <body>
     <main class="container">
+      <nav class="nav" aria-label="Legal navigation">
+        <a class="active" href="./">Home</a>
+        <a href="./privacy-policy.html">Privacy Policy</a>
+        <a href="./terms-and-conditions.html">Terms &amp; Conditions</a>
+      </nav>
       <h1>VOID Launcher Legal</h1>
       <p class="muted">Last updated: 2026-06-02</p>
       <p>
