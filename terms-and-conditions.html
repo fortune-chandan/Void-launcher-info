@@ -38,6 +38,30 @@
       ul {
         padding-left: 20px;
       }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0 18px;
+        font-size: 14px;
+      }
+      th, td {
+        border: 1px solid #2f4a76;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #15213a;
+        color: #dce8ff;
+      }
+      .tag {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 2px 8px;
+        font-size: 12px;
+        border: 1px solid #3d5f96;
+        color: #b5c7eb;
+      }
       .nav {
         display: flex;
         gap: 10px;
@@ -94,9 +118,64 @@
 
       <h2>4. Permissions and Device Functions</h2>
       <p>
-        Certain features require Android permissions (for example usage access,
-        notifications, and package visibility). You are responsible for granting
-        or revoking permissions in device settings.
+        By using VOID Launcher you understand that the App may request Android
+        permissions and special system access. You control optional permissions
+        and can revoke them in device settings. Core permissions we use include:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission / access</th>
+            <th>Required?</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Installed apps / package visibility</td>
+            <td>Yes (launcher)</td>
+            <td>Display and launch apps from your home screen and search.</td>
+          </tr>
+          <tr>
+            <td>Default Home launcher</td>
+            <td>Optional</td>
+            <td>Replace the system home screen when you set VOID as default.</td>
+          </tr>
+          <tr>
+            <td>Usage access</td>
+            <td>Optional</td>
+            <td>Screen-time stats, timers, and per-app daily limits.</td>
+          </tr>
+          <tr>
+            <td>Notifications</td>
+            <td>Optional</td>
+            <td>Limit and reminder alerts.</td>
+          </tr>
+          <tr>
+            <td>Photos / storage</td>
+            <td>Optional</td>
+            <td>Custom wallpaper you choose from gallery.</td>
+          </tr>
+          <tr>
+            <td>Biometric unlock</td>
+            <td>Optional</td>
+            <td>Protect hidden-apps vault when enabled by you.</td>
+          </tr>
+          <tr>
+            <td>Foreground service &amp; boot</td>
+            <td>When limits on</td>
+            <td>Keep limit monitoring active, including after reboot.</td>
+          </tr>
+          <tr>
+            <td>Background process control</td>
+            <td>When limits on</td>
+            <td>Enforce app pause when a limit is reached.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        You agree not to misuse these capabilities to violate law, harass others,
+        or interfere with devices you do not own or control.
       </p>
 
       <h2>5. Third-Party Services</h2>

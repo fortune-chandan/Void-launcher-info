@@ -38,6 +38,30 @@
       ul {
         padding-left: 20px;
       }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0 18px;
+        font-size: 14px;
+      }
+      th, td {
+        border: 1px solid #2f4a76;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #15213a;
+        color: #dce8ff;
+      }
+      .tag {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 2px 8px;
+        font-size: 12px;
+        border: 1px solid #3d5f96;
+        color: #b5c7eb;
+      }
       .nav {
         display: flex;
         gap: 10px;
@@ -109,15 +133,83 @@
         <li>To improve reliability, fix crashes, and prevent abuse.</li>
       </ul>
 
-      <h2>4. Legal Basis and Consent</h2>
+      <h2>4. Android Permissions and Special Access</h2>
       <p>
-        We process data required for core app functionality based on legitimate
-        interest and contract-like necessity to provide the service. For optional
-        permissions (for example usage access and notifications), processing
-        occurs only after user permission and can be revoked in system settings.
+        VOID Launcher requests only what is needed for launcher and screen-time
+        features. Below is what we use, whether it is required, and why.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Permission / access</th>
+            <th>Required?</th>
+            <th>Why we use it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Installed apps / package visibility</strong><br /><span class="tag">QUERY_ALL_PACKAGES</span></td>
+            <td>Yes (launcher core)</td>
+            <td>To show your full app list on the home screen, search, and favorites, and to open apps when you tap them. We do not sell this list.</td>
+          </tr>
+          <tr>
+            <td><strong>Default Home launcher role</strong></td>
+            <td>Optional (recommended)</td>
+            <td>So VOID can act as your Android home screen. You choose this in system settings; you can switch back to another launcher anytime.</td>
+          </tr>
+          <tr>
+            <td><strong>Usage access</strong><br /><span class="tag">PACKAGE_USAGE_STATS</span></td>
+            <td>Optional</td>
+            <td>To read per-app screen time for home stats, timers, and daily limits. Granted only if you turn on Usage access in Android settings.</td>
+          </tr>
+          <tr>
+            <td><strong>Notifications</strong><br /><span class="tag">POST_NOTIFICATIONS</span></td>
+            <td>Optional</td>
+            <td>To show alerts when app limits or reminders apply. You can deny or revoke this permission.</td>
+          </tr>
+          <tr>
+            <td><strong>Photos / storage</strong><br /><span class="tag">READ_MEDIA_IMAGES</span> / <span class="tag">READ_EXTERNAL_STORAGE</span></td>
+            <td>Optional</td>
+            <td>Only if you pick a custom wallpaper from your gallery. We do not scan your entire library in the background.</td>
+          </tr>
+          <tr>
+            <td><strong>Biometric unlock</strong><br /><span class="tag">USE_BIOMETRIC</span> (device)</td>
+            <td>Optional</td>
+            <td>To protect access to hidden-apps vault settings when you choose biometric lock instead of a PIN.</td>
+          </tr>
+          <tr>
+            <td><strong>Foreground service</strong><br /><span class="tag">FOREGROUND_SERVICE</span>, <span class="tag">FOREGROUND_SERVICE_DATA_SYNC</span></td>
+            <td>When limits are active</td>
+            <td>To monitor app time limits reliably while you use your phone, with a visible ongoing notification where required by Android.</td>
+          </tr>
+          <tr>
+            <td><strong>Boot completed</strong><br /><span class="tag">RECEIVE_BOOT_COMPLETED</span></td>
+            <td>When limits are active</td>
+            <td>To restore limit monitoring after you restart your device.</td>
+          </tr>
+          <tr>
+            <td><strong>Background processes</strong><br /><span class="tag">KILL_BACKGROUND_PROCESSES</span></td>
+            <td>When limits are active</td>
+            <td>To pause or block an app when its daily limit is reached, as part of screen-time controls you configured.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        We do <strong>not</strong> request location, contacts, SMS, call logs, or microphone
+        access for launcher operation. Phone/dialer intents are used only when you tap
+        the Phone shortcut to open your device dialer.
       </p>
 
-      <h2>5. Data Storage and Retention</h2>
+      <h2>5. Legal Basis and Consent</h2>
+      <p>
+        We process data required for core app functionality based on legitimate
+        interest and contract-like necessity to provide the service. Optional
+        permissions and special access (usage access, notifications, photos,
+        biometrics) are used only after you grant them and can be revoked in
+        Android settings at any time.
+      </p>
+
+      <h2>6. Data Storage and Retention</h2>
       <p>
         Most launcher data is stored locally on your device. Crash and analytics
         events, if enabled, may be processed by trusted service providers (such
@@ -125,47 +217,47 @@
         legal, and security requirements.
       </p>
 
-      <h2>6. Data Sharing</h2>
+      <h2>7. Data Sharing</h2>
       <p>
         We share data only with service providers required to operate and improve
         the app (for example hosting, analytics, crash reporting), and only to
         the extent necessary.
       </p>
 
-      <h2>7. Security</h2>
+      <h2>8. Security</h2>
       <p>
         We use reasonable technical and organizational safeguards to protect data.
         No method of transmission or storage is completely secure; therefore
         absolute security cannot be guaranteed.
       </p>
 
-      <h2>8. Children</h2>
+      <h2>9. Children</h2>
       <p>
         The app is not directed to children under the age required by local law.
         If you believe a child provided personal data, contact us to request removal.
       </p>
 
-      <h2>9. Your Rights</h2>
+      <h2>10. Your Rights</h2>
       <p>
         Depending on your location, you may have rights to access, correction,
         deletion, or restriction of personal data processing. You may also revoke
         permissions from Android settings at any time.
       </p>
 
-      <h2>10. International Transfers</h2>
+      <h2>11. International Transfers</h2>
       <p>
         Service providers may process data in countries outside your own. Where
         required, we rely on contractual or legal safeguards for cross-border transfers.
       </p>
 
-      <h2>11. Changes to This Policy</h2>
+      <h2>12. Changes to This Policy</h2>
       <p>
         We may update this policy periodically. Material changes will be
         reflected by updating the effective date and, where appropriate,
         additional in-app notice.
       </p>
 
-      <h2>12. Contact</h2>
+      <h2>13. Contact</h2>
       <p>
         For privacy requests or legal concerns, contact:
         <a href="mailto:csahoo137@gmail.com">csahoo137@gmail.com</a>
